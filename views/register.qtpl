@@ -1,0 +1,29 @@
+{% func Register() %}
+<html>
+    <head>
+        <style>
+            .basic-form {
+                display: grid;
+                grid-template-columns: max-content auto;
+                grid-template-rows: repeat(min-content);
+                column-gap: 1rem;
+                row-gap: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="/register" method="POST">
+            <div class="basic-form">
+                <label for="display_name">Display name</label>
+                <input type="text" name="display_name"></input>
+                <label for="email">E-Mail</label>
+                <input type="email" name="email"></input>
+                <label for="password">Password</label>
+                <input type="password" name="password"></input>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </body>
+</html>
+{% endfunc %}

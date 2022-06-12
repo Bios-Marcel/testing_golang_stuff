@@ -1,0 +1,15 @@
+{% import "github.com/Bios-Marcel/testing_golang_stuff/data" %}
+
+{% func Index(user *data.User) %}
+<html>
+    {% if user == nil %}
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+    {% else %}
+        Hello {%s user.GetDisplayName() %}
+        <form action="/logout" method="POST">
+            <input type="submit" value="Logout" />
+        </form>
+    {% endif %} 
+</html>
+{% endfunc %}

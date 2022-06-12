@@ -1,0 +1,30 @@
+{% func Login(failed bool) %}
+<html>
+    <head>
+        <style>
+            .basic-form {
+                display: grid;
+                grid-template-columns: max-content auto;
+                grid-template-rows: repeat(min-content);
+                column-gap: 1rem;
+                row-gap: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="/login" method="POST">
+            {% if failed %}
+            <b>E-Mail or password were incorrect. Don't give up!</b>
+            {% endif %}
+            <div class="basic-form">
+                <label for="email">E-Mail</label>
+                <input type="email" name="email"></input>
+                <label for="password">Password</label>
+                <input type="password" name="password"></input>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </body>
+</html>
+{% endfunc %}
